@@ -1,5 +1,6 @@
 "use client";
 
+import Artist from "@/components/artist/Artist";
 import { useEffect, useState } from "react";
 
 type Album = {
@@ -38,18 +39,14 @@ const Profile = () => {
     <div>
       <h1 className="text-white">Spotify 새로운 릴리즈 앨범 목록</h1>
       <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        {albums.map((album) => (
-          <li key={album.id} className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <img
-              src={album.images[0].url}
-              alt={album.name}
-              className="w-full h-auto rounded-md mb-2"
-            />
-            <p className="text-white font-semibold truncate">{album.name}</p>
-            <p className="text-gray-400 text-sm truncate">
-              {album.artists.map((artist) => artist.name).join(", ")}
-            </p>
-          </li>
+        {albums.map((v) => (
+          <Artist
+            key={v.id}
+            id={v.id}
+            image={v.images[0].url}
+            title={v.name}
+            name={v.artists.map((artist) => artist.name).join(", ")}
+          />
         ))}
       </ul>
     </div>
