@@ -1,7 +1,7 @@
-import ArtistHover from "@/components/artist/ArtistHover";
-import Music from "@/components/artist/Music";
-import Album from "@/components/artist/Album";
-import Profile from "@/data/components/Profile";
+import ArtistHover from "../components/artist/ArtistHover";
+import Music from "../components/artist/Music";
+import Album from "../components/artist/Album";
+import Profile from "../data/components/Profile";
 
 export default function Home() {
   return (
